@@ -14,11 +14,20 @@
     "php": "^8.2",
     "illuminate/support": "^11.0",
     "illuminate/database": "^11.0",
+    "illuminate/console": "^11.0",
     "ramsey/uuid": "^4.7"
   },
   "require-dev": {
     "orchestra/testbench": "^9.0",
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^10.5|^11.0",
+    "mockery/mockery": "^1.6",
+    "pestphp/pest": "^2.0|^3.0",
+    "pestphp/pest-plugin-laravel": "^2.0|^3.0"
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/php-cs-fixer fix"
   },
   "autoload": {
     "psr-4": {
@@ -41,5 +50,10 @@
     }
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
 }

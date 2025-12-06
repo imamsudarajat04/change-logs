@@ -17,7 +17,7 @@ use PHPUnit\TextUI\Configuration\Configuration;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-final class ShellExitCodeCalculator
+final readonly class ShellExitCodeCalculator
 {
     private const SUCCESS_EXIT   = 0;
     private const FAILURE_EXIT   = 1;
@@ -27,7 +27,7 @@ final class ShellExitCodeCalculator
     {
         $failOnDeprecation        = false;
         $failOnPhpunitDeprecation = false;
-        $failOnPhpunitWarning     = false;
+        $failOnPhpunitWarning     = true;
         $failOnEmptyTestSuite     = false;
         $failOnIncomplete         = false;
         $failOnNotice             = false;
@@ -38,7 +38,7 @@ final class ShellExitCodeCalculator
         if ($configuration->failOnAllIssues()) {
             $failOnDeprecation        = true;
             $failOnPhpunitDeprecation = true;
-            $failOnPhpunitWarning     = true;
+            $failOnPhpunitWarning     = false;
             $failOnEmptyTestSuite     = true;
             $failOnIncomplete         = true;
             $failOnNotice             = true;
