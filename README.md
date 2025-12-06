@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/imamsudarajat04/laravel-change-logs.svg?style=flat-square)](https://packagist.org/packages/imamsudarajat04/laravel-change-logs)
 [![Total Downloads](https://img.shields.io/packagist/dt/imamsudarajat04/laravel-change-logs.svg?style=flat-square)](https://packagist.org/packages/imamsudarajat04/laravel-change-logs)
-[![Tests](https://github.com/imamsudarajat04/laravel-change-logs/actions/workflows/tests.yml/badge.svg)](https://github.com/imamsudarajat04/laravel-change-logs/actions/workflows/tests.yml)
 
 A comprehensive change logs tracking package for Laravel 11+ that automatically tracks all model changes (create, update, delete, restore) with detailed audit trails.
 

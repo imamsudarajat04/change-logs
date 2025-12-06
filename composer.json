@@ -1,21 +1,39 @@
 {
   "name": "imamsudarajat04/laravel-change-logs",
-  "description": "A comprehensive change logs tracking package for Laravel 11+",
-  "keywords": ["laravel", "change-logs", "audit", "tracking"],
+  "description": "A comprehensive change logs tracking package for Laravel 11+ that automatically tracks all model changes (create, update, delete, restore) with detailed audit trails",
+  "keywords": [
+    "laravel",
+    "laravel-11",
+    "change-logs",
+    "audit",
+    "audit-trail",
+    "tracking",
+    "model-tracking",
+    "eloquent",
+    "activity-log",
+    "history"
+  ],
+  "homepage": "https://github.com/imamsudarajat04/laravel-change-logs",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
       "name": "Imam Sudarajat",
-      "email": "imamsudarajat708@gmail.com"
+      "email": "imamsudarajat708@gmail.com",
+      "homepage": "https://github.com/imamsudarajat04",
+      "role": "Developer"
     }
   ],
+  "support": {
+    "issues": "https://github.com/imamsudarajat04/laravel-change-logs/issues",
+    "source": "https://github.com/imamsudarajat04/laravel-change-logs",
+    "docs": "https://github.com/imamsudarajat04/laravel-change-logs#readme"
+  },
   "require": {
     "php": "^8.2",
     "illuminate/support": "^11.0",
     "illuminate/database": "^11.0",
-    "illuminate/console": "^11.0",
-    "ramsey/uuid": "^4.7"
+    "illuminate/console": "^11.0"
   },
   "require-dev": {
     "orchestra/testbench": "^9.0",
@@ -23,11 +41,6 @@
     "mockery/mockery": "^1.6",
     "pestphp/pest": "^2.0|^3.0",
     "pestphp/pest-plugin-laravel": "^2.0|^3.0"
-  },
-  "scripts": {
-    "test": "vendor/bin/pest",
-    "test-coverage": "vendor/bin/pest --coverage",
-    "format": "vendor/bin/php-cs-fixer fix"
   },
   "autoload": {
     "psr-4": {
@@ -39,6 +52,11 @@
       "Imamsudarajat04\\ChangeLogs\\Tests\\": "tests/"
     }
   },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "test-parallel": "vendor/bin/pest --parallel"
+  },
   "extra": {
     "laravel": {
       "providers": [
@@ -49,11 +67,14 @@
       }
     }
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
     "allow-plugins": {
       "pestphp/pest-plugin": true
     }
-  }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
