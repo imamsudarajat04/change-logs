@@ -33,7 +33,7 @@ composer require imamsudarajat04/laravel-change-logs
 
 ### 2. Install Package
 ```bash
-php artisan change-logs:install
+php artisan vendor:publish --provider="Imamsudarajat04\\ChangeLogs\\ChangeLogsServiceProvider"
 ```
 
 This will publish:

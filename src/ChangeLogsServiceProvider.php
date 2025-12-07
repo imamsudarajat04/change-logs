@@ -52,9 +52,7 @@ class ChangeLogsServiceProvider extends ServiceProvider
         ], 'change-logs-migrations');
 
         # Load migrations
-        if (file_exists(__DIR__ . '/database/migrations')) {
-            $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        }
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         # Register commands
         if ($this->app->runningInConsole()) {
