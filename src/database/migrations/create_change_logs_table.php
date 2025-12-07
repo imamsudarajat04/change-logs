@@ -56,6 +56,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(Table::CHANGE_LOGS->name);
+        Schema::dropIfExists(Table::CHANGE_LOGS->value);
     }
 };

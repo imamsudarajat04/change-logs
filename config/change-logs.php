@@ -68,6 +68,7 @@ return [
         'api_token',
         'secret',
         'secret_key',
+        'email_verified_at',
     ],
 
     /*
