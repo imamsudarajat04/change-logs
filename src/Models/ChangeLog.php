@@ -21,13 +21,13 @@ use Imamsudarajat04\ChangeLogs\Enums\Table;
  * @property string loggable_id
  * @property string action
  * @property string field_column
- * @property string old_value
- * @property string new_value
+ * @property array|mixed old_value
+ * @property array|mixed new_value
  * @property string user_id
  * @property string ip_address
  * @property string user_agent
  * @property string description
- * @property string tags
+ * @property array|mixed tags
  * @property Carbon date
  * @property Carbon created_at
  * @property Carbon updated_at
@@ -66,6 +66,9 @@ class ChangeLog extends Model
     ];
 
     protected $casts = [
+        'old_value'  => 'array',
+        'new_value'  => 'array',
+        'tags'       => 'array',
         'date'       => 'date',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
