@@ -40,6 +40,9 @@ class ChangeLogsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        # Load migrations
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
         # Publish config
         $this->publishes([
             __DIR__ . '/../config/change-logs.php' => config_path('change-logs.php'),
@@ -47,12 +50,9 @@ class ChangeLogsServiceProvider extends ServiceProvider
 
         # Publish migrations
         $this->publishes([
-            __DIR__ . '/../database/migrations/create_change_logs_table.php' =>
+            __DIR__ . '/../src/database/migrations/create_change_logs_table.php' =>
                 database_path('migrations/' . date('Y_m_d_His') . '_create_change_logs_table.php'),
         ], 'change-logs-migrations');
-
-        # Load migrations
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         # Register commands
         if ($this->app->runningInConsole()) {
