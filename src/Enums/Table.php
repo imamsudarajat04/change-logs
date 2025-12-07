@@ -2,7 +2,7 @@
 
 namespace Imamsudarajat04\ChangeLogs\Enums;
 
-enum Table
+enum Table: string
 {
-    case CHANGE_LOGS;
+    case CHANGE_LOGS = 'change_logs';
 }
