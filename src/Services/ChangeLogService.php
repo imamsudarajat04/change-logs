@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Imamsudarajat04\ChangeLogs\Jobs\CreateChangeLogJob;
 use Imamsudarajat04\ChangeLogs\Models\ChangeLog;
-use Imamsudarajat04\ChangeLogs\enums\RecordAction;
+use Imamsudarajat04\ChangeLogs\Enums\RecordAction;
 
 
 /**

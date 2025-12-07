@@ -5,7 +5,7 @@ namespace Imamsudarajat04\ChangeLogs\Observers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Imamsudarajat04\ChangeLogs\Services\ChangeLogService;
-use Imamsudarajat04\ChangeLogs\enums\RecordAction;
+use Imamsudarajat04\ChangeLogs\Enums\RecordAction;
 
 /**
  * Class ChangeLogObserver
