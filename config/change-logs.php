@@ -23,6 +23,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | ChangeLog Model
+    |--------------------------------------------------------------------------
+    |
+    | This model manages the change log, recording details about who made
+    | changes and when. It serves to maintain an accurate history of modifications.
+    |
+    */
+    'log_model' => env('CHANGE_LOGS_MODEL', Imamsudarajat04\ChangeLogs\Models\ChangeLog::class),
+
+    /*
+    |--------------------------------------------------------------------------
     | Track IP Address
     |--------------------------------------------------------------------------
     |

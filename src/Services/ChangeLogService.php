@@ -222,7 +222,7 @@ class ChangeLogService
                ->onConnection(config('change-logs.queue.connection'))
                ->onQueue(config('change-logs.queue.queue'));
        } else {
-           config('change-logs.user_model')::query()->create($logData);
+           config('change-logs.log_model')::query()->create($logData);
        }
    }
 

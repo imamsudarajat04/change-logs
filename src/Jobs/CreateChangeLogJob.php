@@ -48,7 +48,7 @@ class CreateChangeLogJob implements ShouldQueue
      */
     public function handle(): void
     {
-        config('change-logs.user_model')::query()->create($this->logData);
+        config('change-logs.log_model')::query()->create($this->logData);
     }
 
     /**
