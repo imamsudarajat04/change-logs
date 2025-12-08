@@ -239,13 +239,24 @@ class ChangeLogService
             'user_id' => Auth::id(),
         ];
 
-        if (config('change-logs.track-ip', true)) {
-            $data['ip_address'] = Request::ip();
-        }
+       # Web request context
+       if (config('change-logs.track_ip', true)) {
+           $data['ip_address'] = Request::ip();
+       }
 
-        if (config('change-logs.track_user_agent', true)) {
-            $data['user_agent'] = Request::userAgent();
-        }
+       if (config('change-logs.track_user_agent', true)) {
+           $data['user_agent'] = Request::userAgent();
+       }
+
+       if (config('change-logs.track_method', true)) {
+           $data['method'] = strtoupper(Request::method());
+       }
+
+       if (config('change-logs.track_endpoint', true)) {
+           # Store endpoint only (with leading slash)
+           $endpoint = Request::path();
+           $data['endpoint'] = $endpoint === '/' ? '/' : '/' . $endpoint;
+       }
 
         return $data;
    }

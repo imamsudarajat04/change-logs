@@ -27,6 +27,8 @@ use Imamsudarajat04\ChangeLogs\Enums\Table;
  * @property string ip_address
  * @property string user_agent
  * @property string description
+ * @property string method
+ * @property string endpoint
  * @property array|mixed tags
  * @property Carbon date
  * @property Carbon created_at
@@ -60,6 +62,8 @@ class ChangeLog extends Model
         'user_id',
         'ip_address',
         'user_agent',
+        'method',
+        'endpoint',
         'description',
         'tags',
         'date'
