@@ -8,7 +8,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
-use Imamsudarajat04\ChangeLogs\Models\ChangeLog;
 use Throwable;
 
 /**
@@ -49,7 +48,7 @@ class CreateChangeLogJob implements ShouldQueue
      */
     public function handle(): void
     {
-        ChangeLog::query()->create($this->logData);
+        config('change-logs.user_model')::query()->create($this->logData);
     }
 
     /**

@@ -100,7 +100,7 @@ class ChangeLogService
             'action'        => RecordAction::UPDATE->value,
             'field_column'  => $field,
             'old_value'     => $this->formatValue($model, $field, $oldValue),
-            'mew_value'     => $this->formatValue($model, $field, $newValue),
+            'new_value'     => $this->formatValue($model, $field, $newValue),
             'date'          => now()->toDateString(),
             'description'   => $this->getDescription($model, RecordAction::UPDATE->value, $field),
             'tags'          => $this->getTags($model, RecordAction::UPDATE->value),
@@ -160,7 +160,7 @@ class ChangeLogService
            'loggable_type' => get_class($model),
            'loggable_id'   => $model->getKey(),
            'action'        => RecordAction::DELETE->value,
-           'field_name'    => null,
+           'field_column'  => null,
            'old_value'     => $attributes,
            'new_value'     => null,
            'date'          => now()->toDateString(),
@@ -187,7 +187,7 @@ class ChangeLogService
             'loggable_type' => get_class($model),
             'loggable_id'   => $model->getKey(),
             'action'        => RecordAction::RESTORE->value,
-            'field_name'    => null,
+            'field_column'  => null,
             'old_value'     => null,
             'new_value'     => $attributes,
             'date'          => now()->toDateString(),
@@ -222,7 +222,7 @@ class ChangeLogService
                ->onConnection(config('change-logs.queue.connection'))
                ->onQueue(config('change-logs.queue.queue'));
        } else {
-           ChangeLog::query()->create($logData);
+           config('change-logs.user_model')::query()->create($logData);
        }
    }
 

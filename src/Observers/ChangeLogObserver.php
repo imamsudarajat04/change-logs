@@ -53,7 +53,7 @@ class ChangeLogObserver
      */
     public function updated(Model $model): void
     {
-        if (!$this->shouldLog($model, RecordAction::UPDATE->value)) {
+        if (!$this->shouldLog($model, RecordAction::UPDATE->value) && request()->isMethod(RecordAction::DELETE->value)) {
             return;
         }
 
@@ -124,8 +124,8 @@ class ChangeLogObserver
     /**
      * Determine if the model changes should be logged.
      *
-     *  Benefits: Central point for validating whether changes need to be logged.
-     *  Check the config and shouldLogChanges method in the model.
+     * Benefits: Central point for validating whether changes need to be logged.
+     * Check the config and shouldLogChanges method in the model.
      *
      * @param Model $model
      * @param string $action
